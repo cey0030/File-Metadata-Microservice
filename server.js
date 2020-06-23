@@ -17,9 +17,11 @@ app.get('/', function (req, res) {
      res.sendFile(process.cwd() + '/views/index.html');
   });
 
+// Start of challenge code 
 app.post('/api/fileanalyse', upload.single('file'), function (req, res, next) {
   res.json({size: req.file.size})
 })
+// End of challenge code
 
 app.listen(process.env.PORT || 3000, function () {
   console.log('Node.js listening ...');
